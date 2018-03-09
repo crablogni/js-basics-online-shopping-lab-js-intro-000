@@ -53,12 +53,12 @@ function total() {
 function removeFromCart(item) {
   // write your code here
   var inCart = false
+
   for (var i = 0; i < cart.length; i++){
     if (cart[i].hasOwnProperty(item)){
-      cart = cart.splice(i)
+      cart = cart.splice(i).concat(cart.splice(i+1))
       var inCart = true
       console.log(cart)
-      
     }
   }
   if (!inCart){
